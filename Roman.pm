@@ -15,7 +15,7 @@ sub  convert {
 	my $result          = "";
 
 	if ( $number < 3001 ) {
-		for ( 0..$number ) 
+		while ( $number > 0 ) 
 		{
 			my @temp = $self->checkNum( $number );
 			$result .= $temp[0];
