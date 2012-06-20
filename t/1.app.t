@@ -10,55 +10,60 @@ my @expect = ();
 
 
 @got = $obj->checkNum(2567);
-@expect = ("MM",2000);
+@expect = ( "MM", 2000 );
+
 ok(
 	List::Compare->new(
 		'-a',
-		\@expect ,
+		\@expect,
 		\@got
 		)->is_LequivalentR
 	,"checkNum 2567 => MM"
 );
 
 @got = $obj->checkNum(987);
-@expect = ("CM",900);
+@expect = ( "CM", 900 );
+
 ok(
 	List::Compare->new(
 		'-a',
-		\@expect ,
+		\@expect,
 		\@got
 		)->is_LequivalentR
 	,"checkNum 987 => CM"
 );
 
 @got = $obj->checkNum(795);
-@expect = ("DCC",700);
+@expect = ( "DCC", 700 );
+
 ok(
 	List::Compare->new(
 		'-a',
-		\@expect ,
+		\@expect,
 		\@got
 		)->is_LequivalentR
 	,"checkNum 795 => DCC"
 );
 
 @got = $obj->checkNum(595);
-@expect = ("D",500);
+@expect = ( "D", 500 );
+
 ok(
 	List::Compare->new(
 		'-a',
-		\@expect ,
+		\@expect,
 		\@got
 		)->is_LequivalentR
 	,"checkNum 595 => D"
 );
 
 @got = $obj->checkNum(99);
-@expect = ("XC",90);
+@expect = ( "XC", 90 );
+
 ok(
 	List::Compare->new(
 		'-a',
-		\@expect ,
+		\@expect,
 		\@got
 		)->is_LequivalentR
 	,"checkNum 99 => XC"
@@ -122,8 +127,8 @@ is($obj->convert(2595), "MMDXCV",  "2595  => MMDXCV");
 is($obj->convert(2596), "MMDXCVI", "2596  => MMDXCVI");
 is($obj->convert(2599), "MMDXCIX", "2599  => MMDXCIX");
 
-is($obj->convert(31), "XXXI",      "31  => XXXI");
-is($obj->convert(369), "CCCLXIX",  "369  => CCCLXIX");
-is($obj->convert(369), "CCCLXIX",  "679  => DCLXXIX");
-is($obj->convert(448), "CDXLVIII", "448  => CDXLVIII");
-is($obj->convert(1999), "MCMXCIX", "1999  => MCMXCIX");
+is($obj->convert(31),   "XXXI",      "31  => XXXI");
+is($obj->convert(369),  "CCCLXIX",   "369  => CCCLXIX");
+is($obj->convert(369),  "CCCLXIX",   "679  => DCLXXIX");
+is($obj->convert(448),  "CDXLVIII",  "448  => CDXLVIII");
+is($obj->convert(1999), "MCMXCIX",   "1999  => MCMXCIX");
